@@ -82,7 +82,7 @@ target_compile_definitions(CZIcmd PRIVATE _LIBCZISTATICLIB)
 target_link_libraries(CZIcmd PRIVATE ${ZLIB_LIBRARIES}  ${PNG_LIBRARIES} CLI11::CLI11 libCZIStatic)
 target_include_directories(CZIcmd PRIVATE ${CMAKE_CURRENT_BINARY_DIR} ${RAPIDJSON_INCLUDE_DIRS})
 
-IF(LIBCZI_HAVE_WIN32_API)
+IF(LIBCZI_HAVE_WIN32_API AND BUILD_WIC_DECODER))
   target_link_libraries(CZIcmd PRIVATE gdiplus Windowscodecs ole32)
 ENDIF()
 
