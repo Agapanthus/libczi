@@ -59,6 +59,7 @@ public:
     {
         switch (type)
         {
+#ifdef BUILD_WIC_DECODER
         case ImageDecoderType::JPXR_JxrLib:
         {
             std::call_once(jxrDecoderInitialized,
@@ -69,6 +70,7 @@ public:
 
             return this->jpgXrdecoder;
         }
+#endif // BUILD_WIC_DECODER
         case ImageDecoderType::ZStd0:
         {
             std::call_once(zstd0DecoderInitialized,
