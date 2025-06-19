@@ -5,6 +5,8 @@
 #include "decoder_wic.h"
 
 #if LIBCZI_WINDOWSAPI_AVAILABLE
+#ifdef BUILD_WIC_DECODER
+
 #include "BitmapOperations.h"
 #include <wincodec.h>
 #include <sstream>
@@ -339,4 +341,5 @@ static bool DeterminePixelType(const WICPixelFormatGUID& wicPxlFmt, GUID* destPi
     return bm;
 }
 
+#endif // BUILD_WIC_DECODER
 #endif
