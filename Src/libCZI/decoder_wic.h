@@ -6,8 +6,7 @@
 
 #include <libCZI_Config.h>
 
-#if LIBCZI_WINDOWSAPI_AVAILABLE
-#ifdef BUILD_WIC_DECODER
+#if LIBCZI_WINDOWSAPI_AVAILABLE && LIBCZI_BUILD_WIC
 
 #include <memory>
 #include "libCZI_Pixels.h"
@@ -31,5 +30,4 @@ public:
     std::shared_ptr<libCZI::IBitmapData> Decode(const void* ptrData, size_t size, const libCZI::PixelType* pixelType, const std::uint32_t* height, const std::uint32_t* width, const char* additional_arguments) override;
 };
 
-#endif // BUILD_WIC_DECODER
 #endif
