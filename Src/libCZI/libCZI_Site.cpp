@@ -59,7 +59,7 @@ public:
     {
         switch (type)
         {
-#if LIBCZI_BUILD_WIC
+#if LIBCZI_HAVE_WINCODECS_API
         case ImageDecoderType::JPXR_JxrLib:
         {
             std::call_once(jxrDecoderInitialized,
@@ -70,7 +70,7 @@ public:
 
             return this->jpgXrdecoder;
         }
-#endif // LIBCZI_BUILD_WIC
+#endif // LIBCZI_HAVE_WINCODECS_API
         case ImageDecoderType::ZStd0:
         {
             std::call_once(zstd0DecoderInitialized,
