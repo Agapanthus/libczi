@@ -6,7 +6,7 @@
 
 #include <libCZI_Config.h>
 
-#if LIBCZI_WINDOWSAPI_AVAILABLE
+#if LIBCZI_WINDOWSAPI_AVAILABLE && LIBCZI_BUILD_WIC
 
 #include <memory>
 #include "libCZI_Pixels.h"

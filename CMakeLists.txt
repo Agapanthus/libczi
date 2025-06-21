@@ -133,5 +133,15 @@ if (LIBCZI_BUILD_UNITTESTS)
  enable_testing()
 endif()
 
+# Determine whether we are cross-compiling to Windows. When cross-compiling, there is insufficient support
+# for the Windows Imaging Component (WIC), so we disable it.
+if (LIBCZI_HAVE_WIN32_API)
+  if (CYGWIN OR MSYS OR MINGW)
+    set(LIBCZI_BUILD_WIC OFF)
+  else()
+    set(LIBCZI_BUILD_WIC ON)
+  endif()
+endif()
+
 add_subdirectory(Src)
 

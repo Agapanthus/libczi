@@ -4,7 +4,8 @@
 
 #include "decoder_wic.h"
 
-#if LIBCZI_WINDOWSAPI_AVAILABLE
+#if LIBCZI_WINDOWSAPI_AVAILABLE && LIBCZI_BUILD_WIC
+
 #include "BitmapOperations.h"
 #include <wincodec.h>
 #include <sstream>
