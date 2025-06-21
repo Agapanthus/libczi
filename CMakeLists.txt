@@ -140,8 +140,8 @@ if (LIBCZI_HAVE_WIN32_API)
     set(LIBCZI_BUILD_WIC OFF)
   else()
     set(LIBCZI_BUILD_WIC ON)
-  endif
-endif
+  endif()
+endif()
 
 add_subdirectory(Src)
 
